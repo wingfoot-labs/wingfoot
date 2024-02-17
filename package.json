@@ -1,0 +1,45 @@
+{
+  "name": "stables",
+  "version": "1.0.0",
+  "description": "Social dog sitting exchange platform, providing community-driven alternatives to an expensive status quo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timchang87/stables.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timchang87/stables/issues"
+  },
+  "homepage": "https://github.com/timchang87/stables#readme",
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.15.10",
+    "@types/node": "^20.11.19",
+    "axios": "^1.6.7",
+    "express": "^4.18.2",
+    "jest": "^29.7.0",
+    "jsonwebtoken": "^9.0.2",
+    "node": "^21.6.2",
+    "pg": "^8.11.3",
+    "react": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "redux": "^5.0.1",
+    "sass": "^1.71.0",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.2"
+  },
+  "devDependencies": {
+    "dotenv": "^16.4.4",
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.5",
+    "sonarqube-scanner": "^3.3.0",
+    "webpack-dev-server": "^5.0.2"
+  }
+}

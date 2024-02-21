@@ -116,12 +116,16 @@ project-root/
         - Automated deployment
         - Formatting
         - Security
+        - GitHub Actions
     - IaC AWS
-        - DB for web app
+        - RDS for web app
         - nginx for web server
         - Docker on EC2
         - ELK pipeline and stack
-    
+        - S3 for environment variables (TBD - more research)
+        - VPC
+        - EC2 Linux
+        - Terraform or Ansible (which platform? more research required)
 - +1
     - Search logs
     - Filter logs

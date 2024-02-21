@@ -23,7 +23,8 @@ Social dog sitting exchange platform, providing community-driven alternatives to
 
 - Folder Structure (potentially something like this)
 project-root/
-│
+|-- .github
+|-- .husky
 ├── frontend/
 │   ├── Dockerfile
 │   ├── jest.config.js
@@ -86,3 +87,55 @@ project-root/
 ├── docker-compose.yml
 └── ...
 
+# FEATURES
+- MVP
+    - Authentication and Authorization via Auth0
+        - Sign in
+        - Register
+        - Logout
+        - OAuth
+    - Support Multi-tenancy
+    - Landing Page
+        - Pricing
+        - Features
+        - 404 page
+        - Documentation (very brief how to connect)
+    - Dashboard
+        - List logs (real time and historical)
+            - Each row has the following at a minimum:
+                - Level
+                - Container
+                - Date
+                - Description
+                - Organization/Project ID (this is mainly for the system and not much benefit to the user)
+        - Metrics:
+            - Number of logs per level
+    - Aggregate logs from containers via Docker logging driver plugin or container TBD (for integration with Wingfoot web app)
+    - CI/CD pipeline
+        - Testing (test coverage does not need to be 100%, can be low to start with)
+        - Automated deployment
+        - Formatting
+        - Security
+    - IaC AWS
+        - DB for web app
+        - nginx for web server
+        - Docker on EC2
+        - ELK pipeline and stack
+    
+- +1
+    - Search logs
+    - Filter logs
+    - MFA
+- +2
+    - Archive logs
+    - Team management
+        - Add/invite teammate
+        - Remove teammate
+        - Teammate roles
+- +3
+    - Notifications for errors
+    - Export logs table to csv
+- +4
+    - Trace/timeline visualization of logs
+    - Manage integrations
+NOTE: Refactor for a week between each iteration

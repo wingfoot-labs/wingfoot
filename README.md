@@ -1,5 +1,5 @@
-# stables
-Social dog sitting exchange platform, providing community-driven alternatives to an expensive status quo.
+# wingfoot
+Log aggregation, tracing, and analysis SaaS platform.
 
 # TO DO
 - Set up redux store, actions, reducers

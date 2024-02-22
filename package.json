@@ -2,11 +2,21 @@
   "name": "wingfoot",
   "version": "1.0.0",
   "description": "Social dog sitting exchange platform, providing community-driven alternatives to an expensive status quo.",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "test",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx,.jsx,.scss,.html",
-    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|tsx|jsx|scss|html)\""
+    "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json|tsx|jsx|scss|html)\"",
+    "client:dev": "npm run --prefix ./client start:dev",
+    "server:dev": "npm run --prefix ./server start:dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "build:client": "cd client && npx webpack --config webpack.prod.js",
+    "build:server": "cd server && npx webpack --config webpack.prod.js",
+    "build": "npm run build:client && npm run build:server",
+    "start": "node dist/app.js",
+    "install-deps": "npm run install:client && npm run install:server",
+    "install:client": "cd client && npm install",
+    "install:server": "cd server && npm install"
   },
   "repository": {
     "type": "git",
@@ -24,6 +34,10 @@
     "eslint": "^8.56.0",
     "eslint-config-airbnb": "^19.0.4",
     "prettier": "^3.2.5"
+
+    
   },
-  "dependencies": {}
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
 }

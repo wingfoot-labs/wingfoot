@@ -4,7 +4,8 @@
   "description": "wingfoot",
   "main": "index.tsx",
   "scripts": {
-    "test": "test"
+    "test": "test",
+    "start:dev": "npx webpack-dev-server --config webpack.dev.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,12 +18,19 @@
     "react-dom": "^18.2.0",
     "react-redux": "^9.1.0",
     "react-router": "^6.22.1",
-    "redux": "^5.0.1",
-    "sass": "^1.71.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.90.3"
+    "redux": "^5.0.1"
   },
   "devDependencies": {
-    "@types/react-dom": "^18.2.19"
+    "@types/react-dom": "^18.2.19",
+    "css-loader": "^6.10.0",
+    "html-webpack-plugin": "^5.6.0",
+    "mini-css-extract-plugin": "^2.8.0",
+    "sass": "^1.71.1",
+    "sass-loader": "^14.1.1",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.2"
   }
 }

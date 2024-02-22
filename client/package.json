@@ -1,0 +1,28 @@
+{
+  "name": "wingfoot",
+  "version": "1.0.0",
+  "description": "wingfoot",
+  "main": "index.tsx",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@mui/icons-material": "^5.15.10",
+    "@mui/material": "^5.15.10",
+    "axios": "^1.6.7",
+    "jest": "^29.7.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router": "^6.22.1",
+    "redux": "^5.0.1",
+    "sass": "^1.71.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.3"
+  },
+  "devDependencies": {
+    "@types/react-dom": "^18.2.19"
+  }
+}

@@ -6,11 +6,22 @@ module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
+    historyApiFallback: true,
+    server: {
+      type: 'https',
+      options: {
+        key: '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.key',
+        cert: '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.crt',
+      },
+    },
     compress: true,
     port: 3000,
     proxy: [
       {
-        '/api': 'http://localhost:5000',
+        context: '/api',
+        target: 'https://localhost:5000',
+        secure: true,
+        pathRewrite: { '^/api': '' },
       },
     ],
   },

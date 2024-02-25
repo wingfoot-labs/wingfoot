@@ -11,6 +11,7 @@ services:
       - ./client:/app
       - /usr/src/app/node_modules
     command: npm run start:dev
+
   backend:
     build:
       context: ./server
@@ -22,3 +23,12 @@ services:
       - ./server:/app
       - /usr/src/app/node_modules
     command: npm run start:dev
+
+  # nginx:
+  #   build:
+  #     context: ./nginx
+  #     dockerfile: Dockerfile
+  #   ports:
+  #     - 80:80
+  #     - 443:443
+  #   volumes:

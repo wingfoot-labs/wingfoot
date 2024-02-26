@@ -10,8 +10,8 @@ module.exports = merge(common, {
     server: {
       type: 'https',
       options: {
-        key: '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.key',
-        cert: '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.crt',
+        key: './sec/server.key',
+        cert: './sec/server.crt',
       },
     },
     compress: true,

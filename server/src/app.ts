@@ -5,16 +5,8 @@ const fs = require('fs');
 const app = express();
 
 const options = {
-  key: fs.readFileSync(
-    path.resolve(
-      '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.key',
-    ),
-  ),
-  cert: fs.readFileSync(
-    path.resolve(
-      '/Users/timchang/Documents/https-stuff/wingfoot/dev/server.crt',
-    ),
-  ),
+  key: fs.readFileSync(path.resolve(__dirname, '../sec/server.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../sec/server.crt')),
 };
 
 app.use(express.static(path.join(__dirname, '/../../client/dist/')));

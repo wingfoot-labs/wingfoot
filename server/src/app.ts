@@ -5,11 +5,16 @@ const fs = require('fs');
 const app = express();
 
 const options = {
-  key: fs.readFileSync(path.resolve(__dirname, '../sec/server.key')),
-  cert: fs.readFileSync(path.resolve(__dirname, '../sec/server.crt')),
+  key: fs.readFileSync(path.resolve(__dirname, '../ssl/server.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../ssl/server.crt')),
 };
+console.log('test');
 
 app.use(express.static(path.join(__dirname, '/../../client/dist/')));
+
+app.get('/', (req: any, res: any) => {
+  res.send('test');
+});
 
 app.get('/test', (req: any, res: any) => {
   res.send('test');

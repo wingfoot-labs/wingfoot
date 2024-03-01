@@ -11,8 +11,8 @@
 /server/.dockerignore
 /client/dist
 /server/dist
-/client/sec
-/server/sec
+/client/ssl
+/server/ssl
 .DS_Store
 /client/.DS_Store
 /server/.DS_Store

@@ -1,16 +1,14 @@
 version: '3.8'
 services:
-  frontend:
+  web:
     build:
       context: ./client
       dockerfile: Dockerfile
-      target: base
+      target: production
     ports:
-      - 3000:3000
-    volumes:
-      - ./client:/app
-      - /usr/src/app/node_modules
-    command: npm run start:dev
+      - 80:80
+      - 443:443
+    command: nginx -g "daemon off;"
 
   backend:
     build:
@@ -22,4 +20,4 @@ services:
     volumes:
       - ./server:/app
       - /usr/src/app/node_modules
-    command: npm run start:dev
+    command: npm run start

@@ -17,6 +17,7 @@ FROM node:lts-alpine AS production
 WORKDIR /app
 
 COPY --from=builder /dist /app/dist
+COPY --from=builder /ssl /app/ssl
 
 EXPOSE 5000
 

@@ -10,12 +10,10 @@ COPY . .
 
 FROM base AS builder
 
-CMD [ "npm", "run", "build" ]
+RUN npm run build
 
-FROM node:lts-alpine AS production
+FROM nginx:alpine AS production
 
-WORKDIR /app
-
-COPY --from=builder /dist /app/dist
-
-EXPOSE 3000
+COPY /nginx.conf /etc/nginx/conf.d/default.conf
+COPY /ssl /etc/nginx/ssl
+COPY --from=builder /app/dist /usr/share/nginx/html

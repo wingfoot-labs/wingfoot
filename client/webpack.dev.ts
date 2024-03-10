@@ -1,8 +1,9 @@
-const { merge } = require('webpack-merge');
-const common = require('./webpack.common.js');
-const webpack = require('webpack');
+import { merge } from 'webpack-merge';
+import config from './webpack.common';
+import webpack from 'webpack';
+import { Configuration } from 'webpack';
 
-module.exports = merge(common, {
+const devConfig: Configuration = merge(config, {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
@@ -10,8 +11,8 @@ module.exports = merge(common, {
     server: {
       type: 'https',
       options: {
-        key: './sec/server.key',
-        cert: './sec/server.crt',
+        key: './ssl/server.key',
+        cert: './ssl/server.crt',
       },
     },
     compress: true,
@@ -29,3 +30,5 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(), // Add this plugin
   ],
 });
+
+export default devConfig;

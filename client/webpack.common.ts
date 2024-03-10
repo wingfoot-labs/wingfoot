@@ -1,8 +1,9 @@
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import * as path from 'path';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { Configuration } from 'webpack';
 
-module.exports = {
+const config: Configuration = {
   entry: './src/index.tsx',
   output: {
     filename: 'bundle.js',
@@ -23,10 +24,12 @@ module.exports = {
       {
         test: /\.sa?css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        exclude: /node_modules/,
       },
       {
         test: /\.svg$/,
         loader: 'svg-inline-loader',
+        exclude: /node_modules/,
       },
     ],
   },
@@ -40,3 +43,5 @@ module.exports = {
     new MiniCssExtractPlugin(),
   ],
 };
+
+export default config;

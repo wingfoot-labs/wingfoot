@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
+CMD ["tsc"]
+
 FROM base AS builder
 
 CMD [ "npm", "run", "build" ]
@@ -18,6 +20,3 @@ WORKDIR /app
 
 COPY --from=builder /dist /app/dist
 COPY --from=builder /ssl /app/ssl
-
-EXPOSE 5000
-

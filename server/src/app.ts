@@ -1,14 +1,13 @@
-const express = require('express');
-const https = require('https');
-const path = require('path');
-const fs = require('fs');
+import express from 'express';
+import https from 'https';
+import * as path from 'path';
+import fs from 'fs';
 const app = express();
 
 const options = {
   key: fs.readFileSync(path.resolve(__dirname, '../ssl/server.key')),
   cert: fs.readFileSync(path.resolve(__dirname, '../ssl/server.crt')),
 };
-console.log('test');
 
 app.use(express.static(path.join(__dirname, '/../../client/dist/')));
 

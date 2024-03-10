@@ -1,7 +1,10 @@
-const path = require('path');
+import nodeExternals from 'webpack-node-externals';
+import * as path from 'path';
+import { Configuration } from 'webpack';
 
-module.exports = {
+const config: Configuration = {
   target: 'node',
+  externals: [nodeExternals()],
   entry: './src/app.ts',
   output: {
     filename: 'app.js',
@@ -9,14 +12,17 @@ module.exports = {
   },
   resolve: {
     extensions: ['.ts', '.js'],
+    modules: ['src'],
   },
   module: {
     rules: [
       {
         test: /\.ts$/,
-        use: 'ts-loader',
+        use: ['ts-loader'],
         exclude: /node_modules/,
       },
     ],
   },
 };
+
+export default config;

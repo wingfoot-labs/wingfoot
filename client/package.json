@@ -5,8 +5,8 @@
   "main": "index.tsx",
   "scripts": {
     "test": "test",
-    "build": "webpack --config webpack.prod.js",
-    "start:dev": "npx webpack-dev-server --config webpack.dev.js"
+    "build": "webpack --config webpack.prod.ts",
+    "start:dev": "npx webpack-dev-server --config webpack.dev.ts"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +23,9 @@
     "redux": "^5.0.1"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.24.0",
+    "@babel/preset-typescript": "^7.23.3",
+    "@babel/register": "^7.23.7",
     "@types/react-dom": "^18.2.19",
     "css-loader": "^6.10.0",
     "html-webpack-plugin": "^5.6.0",

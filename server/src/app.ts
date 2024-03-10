@@ -2,14 +2,15 @@ import express from 'express';
 import https from 'https';
 import * as path from 'path';
 import fs from 'fs';
+import { __dirname } from './utils/utils.js';
 const app = express();
 
 const options = {
-  key: fs.readFileSync(path.resolve(__dirname, '../ssl/server.key')),
-  cert: fs.readFileSync(path.resolve(__dirname, '../ssl/server.crt')),
+  key: fs.readFileSync(path.resolve(__dirname, '../../ssl/server.key')),
+  cert: fs.readFileSync(path.resolve(__dirname, '../../ssl/server.crt')),
 };
 
-app.use(express.static(path.join(__dirname, '/../../client/dist/')));
+// app.use(express.static(path.join(__dirname, '/../../client/dist/')));
 
 app.get('/', (req: any, res: any) => {
   res.send('test');

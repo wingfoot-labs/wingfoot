@@ -9,6 +9,7 @@
     "start:dev": "npx webpack-dev-server --config webpack.dev.ts"
   },
   "author": "",
+  "type": "module",
   "license": "ISC",
   "dependencies": {
     "@mui/icons-material": "^5.15.10",

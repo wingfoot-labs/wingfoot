@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "wingfoot",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "test",
-    "start:dev": "nodemon src/app.ts",
+    "start:dev": "nodemon --exec ts-node --esm src/app.ts",
     "build": "webpack --config webpack.prod.ts",
+    "transpile": "tsc",
     "start": "node dist/app.js"
   },
   "author": "wingfoot",

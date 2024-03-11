@@ -3,6 +3,8 @@ import config from './webpack.common';
 import webpack from 'webpack';
 import { Configuration } from 'webpack';
 
+const target = process.env.PROXY_TARGET || 'https://localhost:5000';
+
 const devConfig: Configuration = merge(config, {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -20,8 +22,8 @@ const devConfig: Configuration = merge(config, {
     proxy: [
       {
         context: '/api',
-        target: 'https://localhost:5000',
-        secure: true,
+        target: target,
+        secure: false,
         pathRewrite: { '^/api': '' },
       },
     ],

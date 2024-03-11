@@ -10,14 +10,12 @@ const options = {
   cert: fs.readFileSync(path.resolve(__dirname, '../../ssl/server.crt')),
 };
 
-// app.use(express.static(path.join(__dirname, '/../../client/dist/')));
-
 app.get('/', (req: any, res: any) => {
-  res.send('test');
+  res.send('this is a test 2');
 });
 
 app.get('/test', (req: any, res: any) => {
-  res.send('test');
+  res.send('this is a test 2');
 });
 const server = https.createServer(options, app);
 

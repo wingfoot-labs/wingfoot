@@ -1,6 +1,7 @@
 version: '3.8'
 services:
   frontend:
+    container_name: web
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -10,9 +11,12 @@ services:
     volumes:
       - ./client:/app
       - /usr/src/app/node_modules
+    environment:
+      - PROXY_TARGET=https://node:5000
     command: npm run start:dev
 
   backend:
+    container_name: node
     build:
       context: ./server
       dockerfile: Dockerfile
